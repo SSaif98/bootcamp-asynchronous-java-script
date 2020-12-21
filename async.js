@@ -2,15 +2,20 @@ function apiFetch(){
     let promise = new Promise(function(resolve, reject){
         setTimeout(function(){
             console.log('new Pormise');
-            resolve('data')
+             resolve('hello');
+            // reject('Error Define');
         },3000)
     })
     return promise;
 }
 
 async function _async(){
-    let data = await apiFetch()
-    console.log(data, 'successful')
-}
-
+        try{
+            let data = await apiFetch()
+            console.log( data,'successful')
+          }
+        catch(error){
+            console.log( error,'Error')
+                    }
+               }
 _async();
